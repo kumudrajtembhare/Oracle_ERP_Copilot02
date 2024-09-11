@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/5562d636-e9df-49b1-8c62-7dda05c7a5aa/resourceGroups/business_systems_dev/providers/Microsoft.Web/sites/AMPChatBotdev",
+    "appService.deploySubpath": "."
+}

@@ -1,0 +1,164 @@
+### Oracle tables with their properties and relationship:
+
+# Oracle Apps Standard Databse tables, their important column and description 
+
+1. oe_order_headers_all
+Description: Stores order header information.
+Primary Key: header_id
+Important Columns:
+order_number: The order number.
+ordered_date: Date when the order was placed.
+order_type_id: References order type.
+salesrep_id: Sales representative handling the order.
+sold_to_org_id: Billing customer information.
+ship_to_org_id: Shipping customer information.
+attribute19: Project number
+
+2. oe_order_lines_all
+Description: Stores order line information related to the items being sold.
+Primary Key: line_id
+Foreign Key: header_id (References oe_order_headers_all.header_id)
+Important Columns:
+line_number: Line number on the order.
+inventory_item_id: Item ID of the ordered product.
+ordered_quantity: Quantity of the item ordered.
+shipped_quantity: Quantity of the item shipped.
+unit_selling_price: Unit price of the product.
+
+3. mtl_system_items_b
+Description: Stores information about items in the inventory.
+Primary Key: inventory_item_id and organization_id
+Important Columns:
+segment1: Item code.
+description: Description of the item.
+organization_id: ID of the inventory organization.
+
+4. hz_cust_accounts
+Description: Stores customer account information.
+Primary Key: cust_account_id
+Important Columns:
+account_number: Customer account number.
+account_name: Customer account name.
+
+5. hz_parties
+Description: Stores party information, which can be a customer, supplier, or other entities.
+Primary Key: party_id
+Foreign Key: party_id (References hz_cust_accounts.party_id)
+Important Columns:
+party_name: Name of the party.
+party_type: Type of party (e.g., Organization, Person).
+
+6. ra_customers
+Description: Stores customer billing and payment information.
+Primary Key: customer_id
+Foreign Key: customer_id (References hz_cust_accounts.cust_account_id)
+Important Columns:
+customer_number: Unique customer number.
+customer_name: Customer name.
+
+7. ra_customer_trx_all
+Description: Stores transaction information, including invoices.
+Primary Key: customer_trx_id
+Foreign Key: cust_trx_type_id (References ra_cust_trx_types_all.cust_trx_type_id)
+Important Columns:
+trx_number: Transaction number (e.g., Invoice number).
+trx_date: Transaction date.
+cust_trx_type_id: Transaction type ID.
+
+8. ra_cust_trx_types_all
+Description: Stores transaction type information.
+Primary Key: cust_trx_type_id
+Important Columns:
+name: Name of the transaction type (e.g., Invoice, Credit Memo).
+description: Description of the transaction type.
+
+
+# Custom Databse tables, their important column and description 
+
+#Key Joins for Queries
+Order Header to Order Lines:
+oe_order_headers_all.header_id = oe_order_lines_all.header_id
+
+#Order Lines to Inventory Items:
+#oe_order_lines_all.inventory_item_id = mtl_system_items_b.inventory_item_id
+#oe_order_lines_all.ship_from_org_id = mtl_system_items_b.organization_id
+
+Order Header to Billing and Shipping Customers:
+oe_order_headers_all.sold_to_org_id = hz_cust_accounts.cust_account_id
+oe_order_headers_all.ship_to_org_id = hz_cust_accounts.cust_account_id
+
+Customer to Party:
+hz_cust_accounts.party_id = hz_parties.party_id
+
+Customer to Customer Transactions:
+ra_customers.customer_id = ra_customer_trx_all.customer_id
+
+Customer Transaction to Transaction Type:
+ra_customer_trx_all.cust_trx_type_id = ra_cust_trx_types_all.cust_trx_type_id
+
+### A SQL query to find {{$input}}. Please provide only one SQL query and nothing else in a single string. Do not prompt anything else apart from the sql query.
+User: Can I get the last month created order'?
+Assistant: SELECT ooha.order_number FROM oe_order_headers_all ooha WHERE ooha.creation_date > (SYSDATE - 30)
+User: Can I get the booked date for order number'?
+Assistant: SELECT ooha.order_number, ooha.booked_date FROM oe_order_headers_all ooha Where ooha.order_number = ;
+User: Can I get the number of lines for order'?
+Assistant: SELECT count(1) FROM oe_order_headers_all ooha, oe_order_lines_all oola Where oola.header_id = ooha.header_id AND ooha.order_number = ;
+User: tell me the last shipped order
+Assistant: SELECT order_number FROM (SELECT ooha.order_number, oola.actual_shipment_date 
+FROM oe_order_headers_all ooha, oe_order_lines_all oola 
+WHERE ooha.header_id = oola.header_id 
+AND oola.shipped_quantity > 0 
+AND oola.actual_shipment_date IS NOT NULL
+ORDER BY oola.actual_shipment_date DESC) WHERE ROWNUM = 1;
+User: Get the list of all items ordered in the past week.
+Assistant: SELECT msib.segment1 AS Item_Code, msib.description AS Item_Description, oola.ordered_quantity
+FROM oe_order_lines_all oola, mtl_system_items_b msib
+WHERE oola.inventory_item_id = msib.inventory_item_id
+AND oola.ship_from_org_id = msib.organization_id
+AND oola.creation_date > (SYSDATE - 7);
+User: Get Customer, its bill to address and ship to address for an sales order
+Assistant: SELECT 
+  ooh.order_number 
+, hps_ship.party_site_number site_number
+, hp_bill.party_name customer_name
+, hl_ship.address1 ||Decode(hl_ship.address2,NULL,'',chr(10)) 
+||hl_ship.address2||Decode(hl_ship.address3,NULL,'', chr(10)) 
+||hl_ship.address3||Decode(hl_ship.address4,NULL,'', chr(10)) 
+||hl_ship.address4||Decode(hl_ship.city,NULL,'',chr( 10)) 
+||hl_ship.city ||Decode(hl_ship.state,NULL,'',',') 
+||hl_ship.state ||Decode(hl_ship.postal_code,'',',') 
+||hl_ship.postal_code ship_to_address 
+, hl_bill.address1 ||Decode(hl_bill.address2,NULL,'',chr(10)) 
+||hl_bill.address2||Decode(hl_bill.address3,NULL,'', chr(10)) 
+||hl_bill.address3||Decode(hl_bill.address4,NULL,'', chr(10)) 
+||hl_bill.address4||Decode(hl_bill.city,NULL,'',chr( 10)) 
+||hl_bill.city ||Decode(hl_bill.state,NULL,'',',') 
+||hl_bill.state ||Decode(hl_bill.postal_code,'',',') 
+||hl_bill.postal_code bill_to_address 
+FROM oe_order_headers_all ooha 
+, hz_cust_site_uses_all hcs_ship 
+, hz_cust_acct_sites_all hca_ship 
+, hz_party_sites hps_ship 
+, hz_parties hp_ship 
+, hz_locations hl_ship 
+, hz_cust_site_uses_all hcs_bill 
+, hz_cust_acct_sites_all hca_bill 
+, hz_party_sites hps_bill 
+, hz_parties hp_bill 
+, hz_locations hl_bill 
+, mtl_parameters mp 
+WHERE 1 = 1 
+AND ooh.ship_to_org_id = hcs_ship.site_use_id 
+AND hcs_ship.cust_acct_site_id = hca_ship.cust_acct_site_id 
+AND hca_ship.party_site_id = hps_ship.party_site_id 
+AND hps_ship.party_id = hp_ship.party_id 
+AND hps_ship.location_id = hl_ship.location_id 
+AND ooh.invoice_to_org_id = hcs_bill.site_use_id 
+AND hcs_bill.cust_acct_site_id = hca_bill.cust_acct_site_id 
+AND hca_bill.party_site_id = hps_bill.party_site_id 
+AND hps_bill.party_id = hp_bill.party_id 
+AND hps_bill.location_id = hl_bill.location_id 
+AND mp.organization_id(+) = ooh.ship_from_org_id 
+AND ooh.order_number = ;
+User: {{$input}}
+Assistant:

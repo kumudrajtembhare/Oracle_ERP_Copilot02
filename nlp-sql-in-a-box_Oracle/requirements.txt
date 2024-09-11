@@ -1,0 +1,7 @@
+openai
+python-dotenv
+tiktoken
+semantic-kernel==0.2.7.dev0
+Jinja2
+pyodbc
+streamlit

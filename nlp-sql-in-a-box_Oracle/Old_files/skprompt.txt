@@ -1,0 +1,6 @@
+### Generate a SQL query based on the user input and the available table and column information from the website.
+User: {{$input}}
+Assistant: 
+
+
+

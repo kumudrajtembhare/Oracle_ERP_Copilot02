@@ -1,0 +1,576 @@
+### Oracle tables with their properties and relationship:
+#
+# Databse tables 
+
+# OE_ORDER_HEADERS_ALL stores header information for orders in Order Management.
+# OE_ORDER_LINES_ALL stores information for all order lines in Oracle Order Management.
+
+# Below is the column name and description of each column of oe_order_headers_all
+#Column_Name	Column_Description
+ACCOUNTING_RULE_DURATION	Number of accounting periods, across which revenue is recognized.
+ACCOUNTING_RULE_ID	Accounting rule used by AR for generating Invoice
+AGREEMENT_ID	Internal use only
+ATTRIBUTE1	Descriptive Flexfield segment
+ATTRIBUTE10	Descriptive Flexfield segment
+ATTRIBUTE11	Descriptive Flexfield segment
+ATTRIBUTE12	Descriptive Flexfield segment
+ATTRIBUTE13	Descriptive Flexfield segment
+ATTRIBUTE14	Descriptive Flexfield segment
+ATTRIBUTE15	Descriptive Flexfield segment
+ATTRIBUTE16	Descriptive Flexfield segment
+ATTRIBUTE17	Descriptive Flexfield segment
+ATTRIBUTE18	Descriptive Flexfield segment
+ATTRIBUTE19	Project_Number is segment1 of pa_projects_all table
+ATTRIBUTE2	Descriptive Flexfield segment
+ATTRIBUTE20	Descriptive Flexfield segment
+ATTRIBUTE3	Descriptive Flexfield segment
+ATTRIBUTE4	Descriptive Flexfield segment
+ATTRIBUTE5	Descriptive Flexfield segment
+ATTRIBUTE6	Descriptive Flexfield segment
+ATTRIBUTE7	Descriptive Flexfield segment
+ATTRIBUTE8	Descriptive Flexfield segment
+ATTRIBUTE9	Descriptive Flexfield segment
+BATCH_ID	Internal Batch Identifier for orders imported in BULK mode.
+BLANKET_NUMBER	Reference to Sales Agreement
+BOOKED_DATE	Indicates the date when the order was booked
+BOOKED_FLAG	Indicates whether order is booked ('Y') or not ('N')
+CANCELLED_FLAG	Cancelled Flag
+CHANGE_SEQUENCE	It is sequence number in which changes will be applied. It will make sure that later changes are not over-written by previous order change.
+CHECK_NUMBER	Stores check number if payment type is Check
+CONTEXT	Descriptive Flexfield segment
+CONVERSION_RATE	Rate of the currency conversion
+CONVERSION_RATE_DATE	Date of the currency conversion
+CONVERSION_TYPE_CODE	Currency Conversion type
+CREATED_BY	Standard Who column
+CREATION_DATE	Standard Who column
+CREDIT_CARD_APPROVAL_CODE	Stores credit card approval code if payment type is Credit Card
+CREDIT_CARD_APPROVAL_DATE	The date on which credit card authorization was taken.
+CREDIT_CARD_CODE	Stores credit card name if payment type is Credit Card
+CREDIT_CARD_EXPIRATION_DATE	Stores credit card expiration date if payment type is Credit Card
+CREDIT_CARD_HOLDER_NAME	Stores credit card holder name if payment type is Credit Card
+CREDIT_CARD_NUMBER	Stores credit card number if payment type is Credit Card
+CUST_PO_NUMBER	Customer Purchase Order Number
+CUSTOMER_PAYMENT_TERM_ID	No longer used.
+CUSTOMER_PREFERENCE_SET_CODE	Indicates whether items on the order must ship/arrive together
+CUSTOMER_SIGNATURE	Customer Name
+CUSTOMER_SIGNATURE_DATE	Date when customer signed on the document
+DEFAULT_FULFILLMENT_SET	This will be used to hold the header level preference value for the fulfillment set name.
+DELIVER_TO_CONTACT_ID	Deliver to Contact Id
+DELIVER_TO_ORG_ID	Deliver to Organization Id
+DEMAND_CLASS_CODE	Demand Class
+DRAFT_SUBMITTED_FLAG	Internal Use only
+DROP_SHIP_FLAG	No longer used.
+EARLIEST_SCHEDULE_LIMIT	Limit in number of days earlier than the requested date when the item can be shipped
+END_CUSTOMER_CONTACT_ID	Contact Id of the end customer
+END_CUSTOMER_ID	End customer Id
+END_CUSTOMER_SITE_USE_ID	Site Use Id of the end customer
+EXPIRATION_DATE	Not Used
+FIRST_ACK_CODE	Initial acknowledgment code for oubound EDI transaction
+FIRST_ACK_DATE	Initial acknowledgment date for oubound EDI transaction
+FLOW_STATUS_CODE	Workflow status for the header
+FOB_POINT_CODE	FOB Point Code
+FREIGHT_CARRIER_CODE	Freight Carrier Code
+FREIGHT_TERMS_CODE	Freight Terms Code
+FULFILLMENT_SET_NAME	This will be used to store the name of the fulfillment set. The same will be used for creating system defined fulfillment sets.
+GLOBAL_ATTRIBUTE1	Reserved for country-specific functionality.
+GLOBAL_ATTRIBUTE10	Reserved for country-specific functionality.
+GLOBAL_ATTRIBUTE11	Reserved for country-specific functionality.
+GLOBAL_ATTRIBUTE12	Reserved for country-specific functionality.
+GLOBAL_ATTRIBUTE13	Reserved for country-specific functionality.
+GLOBAL_ATTRIBUTE14	Reserved for country-specific functionality.
+GLOBAL_ATTRIBUTE15	Reserved for country-specific functionality.
+GLOBAL_ATTRIBUTE16	Reserved for country-specific functionality.
+GLOBAL_ATTRIBUTE17	Reserved for country-specific functionality.
+GLOBAL_ATTRIBUTE18	Reserved for country-specific functionality.
+GLOBAL_ATTRIBUTE19	Reserved for country-specific functionality.
+GLOBAL_ATTRIBUTE2	Reserved for country-specific functionality.
+GLOBAL_ATTRIBUTE20	Reserved for country-specific functionality.
+GLOBAL_ATTRIBUTE3	Reserved for country-specific functionality.
+GLOBAL_ATTRIBUTE4	Reserved for country-specific functionality.
+GLOBAL_ATTRIBUTE5	Reserved for country-specific functionality.
+GLOBAL_ATTRIBUTE6	Reserved for country-specific functionality.
+GLOBAL_ATTRIBUTE7	Reserved for country-specific functionality.
+GLOBAL_ATTRIBUTE8	Reserved for country-specific functionality.
+GLOBAL_ATTRIBUTE9	Reserved for country-specific functionality.
+GLOBAL_ATTRIBUTE_CATEGORY	Reserved for country-specific functionality.
+HEADER_ID	Order Header Identifier
+IB_CURRENT_LOCATION	Install Base current location
+IB_INSTALLED_AT_LOCATION	Installed at location
+IB_OWNER	Install Base Owner
+INST_ID	used in RAC INSTANCE AFFINITY for context setting
+INVOICE_TO_CONTACT_ID	Invoice To Contact ID
+INVOICE_TO_ORG_ID	Invoice To Organization ID
+INVOICING_RULE_ID	Invoicing rule used by AR for generating Invoice
+LAST_ACK_CODE	Latest acknowledgment code for oubound EDI transaction
+LAST_ACK_DATE	Latest acknowledgment date for oubound EDI transaction
+LAST_UPDATE_DATE	Standard Who column
+LAST_UPDATE_LOGIN	Standard Who column
+LAST_UPDATED_BY	Standard Who column
+LATEST_SCHEDULE_LIMIT	Limit in number of days later than the requested date when the item can be shipped
+LINE_SET_NAME	This will be used to hold the name of the Line Set. The same will be used for creating system defined line sets.
+LOCK_CONTROL	Internal use only.
+MARKETING_SOURCE_CODE_ID	Marketing Source Code Identifier, Foreign key reference to AMS_SOURCE_CODES
+MINISITE_ID	Mini Site ID for sales orders
+OPEN_FLAG	Indicates whether the order has been closed ('N') or not ('Y')
+ORDER_CATEGORY_CODE	Order Category Code
+ORDER_DATE_TYPE_CODE	Order Date Type Code
+ORDER_FIRMED_DATE	Demand firm date
+ORDER_NUMBER	User-visible number of the order
+ORDER_SOURCE_ID	Source of the order
+ORDER_TYPE_ID	Order Transaction Type Identifier
+ORDERED_DATE	Ordered Date
+ORG_ID	Operating Unit which performed this transaction
+ORIG_SYS_DOCUMENT_REF	Original document reference for the order in external system
+PACKING_INSTRUCTIONS	Packing Instructions for Order
+PARTIAL_SHIPMENTS_ALLOWED	Not Used
+PAYMENT_AMOUNT	Stores amount of payment
+PAYMENT_TERM_ID	Payment Terms
+PAYMENT_TYPE_CODE	Stores type of payment for orders (cash, check, credit)
+PRICE_LIST_ID	Price list Identification for the order
+PRICE_REQUEST_CODE	Code identifies pricing transaction applied to Order Header
+PRICING_DATE	Determines effective list and price modifiers
+PROGRAM_APPLICATION_ID	Application of concurrent program that last updated row.
+PROGRAM_ID	Concurrent program that last updated row.
+PROGRAM_UPDATE_DATE	Last date changed by concurrent program
+QUOTE_DATE	Populated using defaulting rules.
+QUOTE_NUMBER	This is populated for Orders under negotiation
+REQUEST_DATE	Request date for the order
+REQUEST_ID	Concurrent request that last changed row
+RETURN_REASON_CODE	This column stores return reason code for a return order, and is for defaulting to a return line
+SALES_CHANNEL_CODE	Sales channel through which order was placed
+SALES_DOCUMENT_NAME	Stores Quote Name for Orders under negotiation.
+SALES_DOCUMENT_TYPE_CODE	For Future Release
+SALESREP_ID	Sales representative Identification
+SHIP_FROM_ORG_ID	Ship From Organization Id - Warehouse
+SHIP_TO_CONTACT_ID	Ship to Contact Id
+SHIP_TO_ORG_ID	Ship to Organization Id
+SHIP_TOLERANCE_ABOVE	Over Shipment/Return Tolerance
+SHIP_TOLERANCE_BELOW	Under Shipment/Return Tolerance
+SHIPMENT_PRIORITY_CODE	Shipment Priority Code
+SHIPPING_INSTRUCTIONS	Shipping Instructions for Order
+SHIPPING_METHOD_CODE	Shipping method to be used to ship the order
+SOLD_FROM_ORG_ID	Selling Organization
+SOLD_TO_CONTACT_ID	Customer contact
+SOLD_TO_ORG_ID	Sold to customer
+SOLD_TO_PHONE_ID	Phone Number of Sold to Customer
+SOLD_TO_SITE_USE_ID	Customer Location
+SOURCE_DOCUMENT_ID	Source Order Header Identifier
+SOURCE_DOCUMENT_TYPE_ID	Indicates the source of the order
+SOURCE_DOCUMENT_VERSION_NUMBER	Internal Use only
+SUPPLIER_SIGNATURE	Supplier Name
+SUPPLIER_SIGNATURE_DATE	Date when supplier signed on the document.
+TAX_EXEMPT_FLAG	It will decide the tax handling for the order. Possible values can be S - Standard, E - Exempt, R - Required
+TAX_EXEMPT_NUMBER	The Tax exemption Number
+TAX_EXEMPT_REASON_CODE	The reason code for Tax exemption
+TAX_POINT_CODE	For future use
+TP_ATTRIBUTE1	Descriptive Flexfield segment
+TP_ATTRIBUTE10	Descriptive Flexfield segment
+TP_ATTRIBUTE11	Descriptive Flexfield segment
+TP_ATTRIBUTE12	Descriptive Flexfield segment
+TP_ATTRIBUTE13	Descriptive Flexfield segment
+TP_ATTRIBUTE14	Descriptive Flexfield segment
+TP_ATTRIBUTE15	Descriptive Flexfield segment
+TP_ATTRIBUTE2	Descriptive Flexfield segment
+TP_ATTRIBUTE3	Descriptive Flexfield segment
+TP_ATTRIBUTE4	Descriptive Flexfield segment
+TP_ATTRIBUTE5	Descriptive Flexfield segment
+TP_ATTRIBUTE6	Descriptive Flexfield segment
+TP_ATTRIBUTE7	Descriptive Flexfield segment
+TP_ATTRIBUTE8	Descriptive Flexfield segment
+TP_ATTRIBUTE9	Descriptive Flexfield segment
+TP_CONTEXT	Descriptive Flexfield segment
+TRANSACTION_PHASE_CODE	Indicates if Transaction is in negotitation or fulfillment phase
+TRANSACTIONAL_CURR_CODE	Currency for the order
+UPGRADED_FLAG	Denotes if this line is upgraded into R11i or newly created in R11i version.
+USER_STATUS_CODE	User entered status
+VERSION_NUMBER	Not Used
+XML_MESSAGE_ID	This is to store the unique id for each XML Message processed. This id will be used to get the Control Area Data which is stored in XML Gateway tables to send on the Outbound Message.
+
+# Below is the column name and description of each column of oe_order_lines_all
+#Column_Name	Column_Description
+ACCEPTED_BY	User ID of the person performing the revenue recognition acceptance
+ACCEPTED_QUANTITY	If accepted for revenue recognition, the quantity = fulfilled quantity.If rejected for revenue recognition, the quantity = 0
+ACCOUNTING_RULE_DURATION	Number of accounting periods, across which revenue is recognized.
+ACCOUNTING_RULE_ID	Accounting rule used by AR for generating Invoice
+ACTUAL_ARRIVAL_DATE	Date the item actually arrived at customer's site
+ACTUAL_FULFILLMENT_DATE	Actual Fulfillment Date
+ACTUAL_SHIPMENT_DATE	Actual Shipment Date of the line
+AGREEMENT_ID	Internal use only
+ARRIVAL_SET_ID	Arrival Set Identifier
+ATO_LINE_ID	System-generated identifier if ATO configuration top model line
+ATTRIBUTE1	Descriptive Flexfield segment
+ATTRIBUTE10	Descriptive Flexfield segment
+ATTRIBUTE11	Descriptive Flexfield segment
+ATTRIBUTE12	Descriptive Flexfield segment
+ATTRIBUTE13	Descriptive Flexfield segment
+ATTRIBUTE14	Descriptive Flexfield segment
+ATTRIBUTE15	Descriptive Flexfield segment
+ATTRIBUTE16	Descriptive Flexfield segment
+ATTRIBUTE17	Descriptive Flexfield segment
+ATTRIBUTE18	Descriptive Flexfield segment
+ATTRIBUTE19	Descriptive Flexfield segment
+ATTRIBUTE2	Descriptive Flexfield segment
+ATTRIBUTE20	Descriptive Flexfield segment
+ATTRIBUTE3	Descriptive Flexfield segment
+ATTRIBUTE4	Descriptive Flexfield segment
+ATTRIBUTE5	Descriptive Flexfield segment
+ATTRIBUTE6	Descriptive Flexfield segment
+ATTRIBUTE7	Descriptive Flexfield segment
+ATTRIBUTE8	Descriptive Flexfield segment
+ATTRIBUTE9	Descriptive Flexfield segment
+AUTHORIZED_TO_SHIP_FLAG	Field to identify whether the demand lines are authorized to ship.
+AUTO_SELECTED_QUANTITY	Not used
+BLANKET_LINE_NUMBER	Reference to a Sales Agreement Line
+BLANKET_NUMBER	Reference to Sales Agreement
+BLANKET_VERSION_NUMBER	Reference to a Sales Agreement Version
+BOOKED_FLAG	Indicates whether order line is booked (Y) or not (N)
+BYPASS_SCH_FLAG	Is scheduling on the line to be bypassed?
+CALCULATE_PRICE_FLAG	Controls repricing of order lines
+CANCELLED_FLAG	Indicates whether line is completely cancelled
+CANCELLED_QUANTITY	Cancelled Quantity
+CANCELLED_QUANTITY2	Cancelled Quantity
+CHANGE_SEQUENCE	It is sequence number in which changes will be applied. It will make sure that later changes are not over-written by previous order change.
+CHARGE_PERIODICITY_CODE	This column is used to determine the price for an order line with a recurring charge item
+COMMITMENT_ID	Commitment to apply line against
+COMPONENT_CODE	Identifier of component within an exploded bill
+COMPONENT_NUMBER	System Generated Identifier of the included item within a model or a class
+COMPONENT_SEQUENCE_ID	Bill of materials component (option) or bill (top model)
+CONFIG_DISPLAY_SEQUENCE	Not used
+CONFIG_HEADER_ID	System-generated identifier for Oracle Configurator reference
+CONFIG_REV_NBR	System-generated identifier for Oracle Configurator reference
+CONFIGURATION_ID	Not Used
+CONTEXT	Descriptive Flexfield segment
+CONTINGENCY_ID	Foreign key to AR_DEFERRAL_REASONS.CONTINGENCY_ID
+CREATED_BY	Standard Who column
+CREATION_DATE	Standard Who column
+CREDIT_INVOICE_LINE_ID	This column stores the invoice line id this return line applies credit to
+CUST_MODEL_SERIAL_NUMBER	Vehicle Id Number (VIN)
+CUST_PO_NUMBER	Customer Purchase Order Number
+CUST_PRODUCTION_SEQ_NUM	Unique production sequence that indicates how the customer transmitted the demand lines.
+CUSTOMER_DOCK_CODE	Doc code
+CUSTOMER_ITEM_NET_PRICE	Reference Information. Contains Customers net price, if specified while importing an order.
+CUSTOMER_JOB	Customer Job number
+CUSTOMER_LINE_NUMBER	Reference Information. Contains customers line number, if specified while importing an order. Customers who have an alphanumeric line number can store their line number information in this field.
+CUSTOMER_PAYMENT_TERM_ID	Reference Information. Contains Customers payment term, if specified while importing an order.
+CUSTOMER_PRODUCTION_LINE	Customer Production Line
+CUSTOMER_SHIPMENT_NUMBER	Reference Information. Contains Customers Shipment number, if specified while importing an order. Customers who have an alphanumeric shipment number can store their shipment number information in this field.
+CUSTOMER_TRX_LINE_ID	Currently not being used.
+DELIVER_TO_CONTACT_ID	Deliver to Contact Id
+DELIVER_TO_ORG_ID	Deliver to Organization Id
+DELIVERY_LEAD_TIME	Deliver Lead time
+DEMAND_BUCKET_TYPE_CODE	Bucket Type designator (e.g, discrete, weekly, monthly) associated with the order line.
+DEMAND_CLASS_CODE	Demand Class
+DEP_PLAN_REQUIRED_FLAG	Departure Planning Required Flag possible values Y/N
+DROP_SHIP_FLAG	Not Used
+EARLIEST_ACCEPTABLE_DATE	Earliest Date the item is acceptable.
+EARLIEST_SHIP_DATE	This will be used to store the earliest Shipping Date , passed by Planning.
+END_CUSTOMER_CONTACT_ID	Contact ID of End Customer
+END_CUSTOMER_ID	Customer ID of End Customer
+END_CUSTOMER_SITE_USE_ID	Site Use ID of End Customer
+END_ITEM_UNIT_NUMBER	Uniquely identifies which bill of material to be used for building a specific Model/Unit Number effectivity controlled item
+EXPLOSION_DATE	Date when the included items were exploded and frozen
+FIRM_DEMAND_FLAG	FIRM_DEMAND_FLAG
+FIRST_ACK_CODE	Initial acknowledgment code for oubound EDI transaction
+FIRST_ACK_DATE	Initial acknowledgment date for oubound EDI transaction
+FLOW_STATUS_CODE	Workflow status for the line
+FOB_POINT_CODE	FOB Point Code
+FREIGHT_CARRIER_CODE	Freight carrier for the order line.
+FREIGHT_TERMS_CODE	Freight Terms, specifying the responsibility for Freight charges
+FULFILLED_FLAG	Fulfilled Flag to indicate whether the line has been fulfilled.
+FULFILLED_QUANTITY	Fulfilled Quantity
+FULFILLED_QUANTITY2	Fulfilled quantity in ordered_quantity_uom2
+FULFILLMENT_BASE	The column will store fulfillment base value
+FULFILLMENT_DATE	Fulfillment Date for the Line
+FULFILLMENT_METHOD_CODE	Fulfillment Method Code
+GLOBAL_ATTRIBUTE1	Reserved for country-specific functionality.
+GLOBAL_ATTRIBUTE10	Reserved for country-specific functionality.
+GLOBAL_ATTRIBUTE11	Reserved for country-specific functionality.
+GLOBAL_ATTRIBUTE12	Reserved for country-specific functionality.
+GLOBAL_ATTRIBUTE13	Reserved for country-specific functionality.
+GLOBAL_ATTRIBUTE14	Reserved for country-specific functionality.
+GLOBAL_ATTRIBUTE15	Reserved for country-specific functionality.
+GLOBAL_ATTRIBUTE16	Reserved for country-specific functionality.
+GLOBAL_ATTRIBUTE17	Reserved for country-specific functionality.
+GLOBAL_ATTRIBUTE18	Reserved for country-specific functionality.
+GLOBAL_ATTRIBUTE19	Reserved for country-specific functionality.
+GLOBAL_ATTRIBUTE2	Reserved for country-specific functionality.
+GLOBAL_ATTRIBUTE20	Reserved for country-specific functionality.
+GLOBAL_ATTRIBUTE3	Reserved for country-specific functionality.
+GLOBAL_ATTRIBUTE4	Reserved for country-specific functionality.
+GLOBAL_ATTRIBUTE5	Reserved for country-specific functionality.
+GLOBAL_ATTRIBUTE6	Reserved for country-specific functionality.
+GLOBAL_ATTRIBUTE7	Reserved for country-specific functionality.
+GLOBAL_ATTRIBUTE8	Reserved for country-specific functionality.
+GLOBAL_ATTRIBUTE9	Reserved for country-specific functionality.
+GLOBAL_ATTRIBUTE_CATEGORY	Reserved for country-specific functionality.
+HEADER_ID	Foreign key refernence to OE_ORDER_HEADERS_ALL; the order to which this line belongs.
+IB_CURRENT_LOCATION	Current Location
+IB_INSTALLED_AT_LOCATION	Installed at Location
+IB_OWNER	Owner
+INDUSTRY_ATTRIBUTE1	Industry specific Descriptive Flexfield segment
+INDUSTRY_ATTRIBUTE10	Industry specific Descriptive Flexfield segment
+INDUSTRY_ATTRIBUTE11	Industry specific Descriptive Flexfield segment
+INDUSTRY_ATTRIBUTE12	Industry specific Descriptive Flexfield segment
+INDUSTRY_ATTRIBUTE13	Industry specific Descriptive Flexfield segment
+INDUSTRY_ATTRIBUTE14	Industry specific Descriptive Flexfield segment
+INDUSTRY_ATTRIBUTE15	Industry specific Descriptive Flexfield segment
+INDUSTRY_ATTRIBUTE16	Industry specific Descriptive Flexfield segment
+INDUSTRY_ATTRIBUTE17	Industry specific Descriptive Flexfield segment
+INDUSTRY_ATTRIBUTE18	Industry specific Descriptive Flexfield segment
+INDUSTRY_ATTRIBUTE19	Industry specific Descriptive Flexfield segment
+INDUSTRY_ATTRIBUTE2	Industry specific Descriptive Flexfield segment
+INDUSTRY_ATTRIBUTE20	Industry specific Descriptive Flexfield segment
+INDUSTRY_ATTRIBUTE21	Industry specific Descriptive Flexfield segment
+INDUSTRY_ATTRIBUTE22	Industry specific Descriptive Flexfield segment
+INDUSTRY_ATTRIBUTE23	Industry specific Descriptive Flexfield segment
+INDUSTRY_ATTRIBUTE24	Industry specific Descriptive Flexfield segment
+INDUSTRY_ATTRIBUTE25	Industry specific Descriptive Flexfield segment
+INDUSTRY_ATTRIBUTE26	Industry specific Descriptive Flexfield segment
+INDUSTRY_ATTRIBUTE27	Industry specific Descriptive Flexfield segment
+INDUSTRY_ATTRIBUTE28	Industry specific Descriptive Flexfield segment
+INDUSTRY_ATTRIBUTE29	Industry specific Descriptive Flexfield segment
+INDUSTRY_ATTRIBUTE3	Industry specific Descriptive Flexfield segment
+INDUSTRY_ATTRIBUTE30	Industry specific Descriptive Flexfield segment
+INDUSTRY_ATTRIBUTE4	Industry specific Descriptive Flexfield segment
+INDUSTRY_ATTRIBUTE5	Industry specific Descriptive Flexfield segment
+INDUSTRY_ATTRIBUTE6	Industry specific Descriptive Flexfield segment
+INDUSTRY_ATTRIBUTE7	Industry specific Descriptive Flexfield segment
+INDUSTRY_ATTRIBUTE8	Industry specific Descriptive Flexfield segment
+INDUSTRY_ATTRIBUTE9	Industry specific Descriptive Flexfield segment
+INDUSTRY_CONTEXT	Descriptive Flexfield segment
+INST_ID	used in RAC INSTANCE AFFINITY for context setting
+INTMED_SHIP_TO_CONTACT_ID	Intermediate ship to contact id for the Line
+INTMED_SHIP_TO_ORG_ID	Intermediate ship to organization id for the line
+INVENTORY_ITEM_ID	Inventory Item ID
+INVOICE_INTERFACE_STATUS_CODE	To indicate whether the invoicing activity is complete
+INVOICE_TO_CONTACT_ID	Invoice To Contact ID
+INVOICE_TO_ORG_ID	Invoice To Organization ID
+INVOICED_QUANTITY	To indicate whether the invoicing activity is complete or not.
+INVOICING_RULE_ID	Invoicing rule used by AR for generating Invoice
+ITEM_IDENTIFIER_TYPE	To distinguish different types of items (internal, customer. and generic items)
+ITEM_RELATIONSHIP_TYPE	Stores the Item Releationship Type
+ITEM_REVISION	This column stores the item revision for a return line
+ITEM_SUBSTITUTION_TYPE_CODE	Used to store the Item Substitution Type. It can be used to override the preferences specified in Item Substitution setup. It can also be used to turn-off substitution for the line.
+ITEM_TYPE_CODE	Type of item
+LAST_ACK_CODE	Latest acknowledgment code for oubound EDI transaction
+LAST_ACK_DATE	Latest acknowledgment date for oubound EDI transaction
+LAST_UPDATE_DATE	Standard Who column
+LAST_UPDATE_LOGIN	Standard Who column
+LAST_UPDATED_BY	Standard Who column
+LATE_DEMAND_PENALTY_FACTOR	This column can be used to specify the 'Penalty Factor for Late Demand' on the sales order line. This value is used in Planning.
+LATEST_ACCEPTABLE_DATE	Latest Date the item is acceptable.
+LINE_CATEGORY_CODE	Indicates whether the line is regular or return
+LINE_ID	System Generated Line Identifier.
+LINE_NUMBER	Line sequence number within the order
+LINE_SET_ID	Line Set id
+LINE_TYPE_ID	Line Transaction Type Identifier
+LINK_TO_LINE_ID	System-generated identifier of immediate parent component line
+LOCK_CONTROL	Internal use only.
+MARKETING_SOURCE_CODE_ID	Marketing source code identifier. Foreign key reference to CRM table AMS_SOURCE_CODE.
+MFG_COMPONENT_SEQUENCE_ID	Not used
+MFG_LEAD_TIME	This column stores the Manufacturing Lead time for ATO Options.
+MINISITE_ID	iStore minisite ID - Foreign Key reference to IBE_MSITES_B
+MODEL_GROUP_NUMBER	Currently not used
+MODEL_REMNANT_FLAG	Indicates whether model has partially shipped components
+OPEN_FLAG	Indicates whether the line has been closed (N) or not (Y)
+OPTION_FLAG	No longer used
+OPTION_NUMBER	System generated identifer for an option or a class within a model
+ORDER_FIRMED_DATE	Order Firm Date
+ORDER_QUANTITY_UOM	Ordered quantity Unit of measure
+ORDER_SOURCE_ID	Source of order line
+ORDERED_ITEM	Stores name of Ordered Item
+ORDERED_ITEM_ID	Stores Id of Ordered Item
+ORDERED_QUANTITY	Quantity Ordered
+ORDERED_QUANTITY2	Ordered quantity in secondary inventory unit of measure
+ORDERED_QUANTITY_UOM2	Ordered Quantity unit of measure
+ORG_ID	Operating Unit which performed this transaction.
+ORIG_SYS_DOCUMENT_REF	Original document reference for the order in external system
+ORIG_SYS_LINE_REF	Identifier of line from a source system outside of Oracle Order Management
+ORIG_SYS_SHIPMENT_REF	Original shipment information for the line of the order in external system
+ORIGINAL_INVENTORY_ITEM_ID	Stores the Original Inventory Item when there is a substitution.
+ORIGINAL_ITEM_IDENTIFIER_TYPE	Stores the Original Item Identifier Type when there is a substitution.
+ORIGINAL_LIST_PRICE	Value of Original List Price
+ORIGINAL_ORDERED_ITEM	Stores the Original Ordered Item when there is a substitution.
+ORIGINAL_ORDERED_ITEM_ID	Stores the Original Ordered Item when there is a substitution.
+OVER_SHIP_REASON_CODE	Overshipment Reason Code
+OVER_SHIP_RESOLVED_FLAG	Overshipment Resolved Flag
+OVERRIDE_ATP_DATE_CODE	By setting this code, User can force a 'Schedule Ship Date' , even if the supply is not available.
+PACKING_INSTRUCTIONS	Packing Instructions for Line
+PAYMENT_TERM_ID	Payment Terms
+PAYMENT_TYPE_CODE	Stores Payment type entered at the Line Level
+PLANNING_PRIORITY	Planning Priority
+PRE_EXPLODED_FLAG	Is this a pre-exploded component in a BOM structure?
+PREFERRED_GRADE	Grade requested by the customer
+PRICE_LIST_ID	Price List
+PRICE_REQUEST_CODE	Code identifies pricing transaction applied to Order Line
+PRICING_ATTRIBUTE1	Pricing Related Descriptive Flexfield segment
+PRICING_ATTRIBUTE10	Pricing Related Descriptive Flexfield segment
+PRICING_ATTRIBUTE2	Pricing Related Descriptive Flexfield segment
+PRICING_ATTRIBUTE3	Pricing Related Descriptive Flexfield segment
+PRICING_ATTRIBUTE4	Pricing Related Descriptive Flexfield segment
+PRICING_ATTRIBUTE5	Pricing Related Descriptive Flexfield segment
+PRICING_ATTRIBUTE6	Pricing Related Descriptive Flexfield segment
+PRICING_ATTRIBUTE7	Pricing Related Descriptive Flexfield segment
+PRICING_ATTRIBUTE8	Pricing Related Descriptive Flexfield segment
+PRICING_ATTRIBUTE9	Pricing Related Descriptive Flexfield segment
+PRICING_CONTEXT	Descriptive Flexfield segment
+PRICING_DATE	Determines effective list and price modifiers
+PRICING_QUANTITY	Quantity based on pricing unit of measure
+PRICING_QUANTITY_UOM	Unit of measure used for pricing
+PROGRAM_APPLICATION_ID	Application of concurrent program that last updated row.
+PROGRAM_ID	Concurrent program that last updated row.
+PROGRAM_UPDATE_DATE	Last date changed by concurrent program
+PROJECT_ID	Project associated with this transaction
+PROMISE_DATE	Date promised to customer to receive item
+RE_SOURCE_FLAG	Indicates whether user entered the warehouse or the system did
+REFERENCE_CUSTOMER_TRX_LINE_ID	This column stores the invoice line id this return line references
+REFERENCE_HEADER_ID	This column stores the sales order header id this return line references
+REFERENCE_LINE_ID	This column stores the sales order line id this return line references
+REFERENCE_TYPE	This column is now obsolete
+REQUEST_DATE	Ordered Item Request date
+REQUEST_ID	Concurrent request that last changed row
+RETROBILL_REQUEST_ID	Retrobill Request ID - Foreign key reference to OE_RETROBILL_REQUESTS
+RETURN_ATTRIBUTE1	Returns specific Descriptive Flexfield segment
+RETURN_ATTRIBUTE10	Returns specific Descriptive Flexfield segment
+RETURN_ATTRIBUTE11	Returns specific Descriptive Flexfield segment
+RETURN_ATTRIBUTE12	Returns specific Descriptive Flexfield segment
+RETURN_ATTRIBUTE13	Returns specific Descriptive Flexfield segment
+RETURN_ATTRIBUTE14	Returns specific Descriptive Flexfield segment
+RETURN_ATTRIBUTE15	Returns specific Descriptive Flexfield segment
+RETURN_ATTRIBUTE2	Returns specific Descriptive Flexfield segment
+RETURN_ATTRIBUTE3	Returns specific Descriptive Flexfield segment
+RETURN_ATTRIBUTE4	Returns specific Descriptive Flexfield segment
+RETURN_ATTRIBUTE5	Returns specific Descriptive Flexfield segment
+RETURN_ATTRIBUTE6	Returns specific Descriptive Flexfield segment
+RETURN_ATTRIBUTE7	Returns specific Descriptive Flexfield segment
+RETURN_ATTRIBUTE8	Returns specific Descriptive Flexfield segment
+RETURN_ATTRIBUTE9	Returns specific Descriptive Flexfield segment
+RETURN_CONTEXT	Descriptive Flexfield segment
+RETURN_REASON_CODE	This column stores return reason code for a return line, and is required for a return line
+REVENUE_AMOUNT	For future use
+REVREC_COMMENTS	Free form comments for revenue recognition acceptance or rejection
+REVREC_EVENT_CODE	Revenue deferral event such as Invoicing, Acceptance.
+REVREC_EXPIRATION_DAYS	To expire this # of days after revenue recognition acceptance expiration event attribute.
+REVREC_IMPLICIT_FLAG	Yes = Implicit Revenue Recognition AcceptanceNo or NULL = Explicit Revenue Recognition Acceptance
+REVREC_REFERENCE_DOCUMENT	Free form text area for entering information about the document that was received to confirm the revenue recognition acceptance or rejection.
+REVREC_SIGNATURE	Name of the customer who accepted or rejected for revenue recognition.
+REVREC_SIGNATURE_DATE	The date that the customer accepted or rejected for revenue recognition.
+RLA_SCHEDULE_TYPE_CODE	Source to determine replacement eligibility and hierarchy for the netting logic.
+SALES_DOCUMENT_TYPE_CODE	For Future Release
+SALESREP_ID	Sales person identifier
+SCHEDULE_ARRIVAL_DATE	Date Scheduled for the item to arrive at the customer site
+SCHEDULE_SHIP_DATE	Date Scheduled to ship item
+SCHEDULE_STATUS_CODE	Indicates if the line is scheduled
+SERVICE_BILL_OPTION_CODE	Stores the Serivce Billing Option Code that specifies how the Service Lines should be billed, should they be billed completly from Order Management, completely from Service Contracts, or first period from OM and subsequent periods from Service Contracts
+SERVICE_BILL_PROFILE_ID	Stores the Billing Profile value for Service Lines
+SERVICE_COTERMINATE_FLAG	To identify whether the service can be coterminated.
+SERVICE_COV_TEMPLATE_ID	Stores Service Coverage Template ID for Extended Warranty Lines
+SERVICE_CREDIT_ELIGIBLE_CODE	Flag to indicate whether a return of service is eligible for credit.
+SERVICE_DURATION	Internal use only
+SERVICE_END_DATE	Internal use only
+SERVICE_FIRST_PERIOD_AMOUNT	Stores the value for which the Service Line would get billed from Order Management in case of first period billing from Order Management
+SERVICE_FIRST_PERIOD_ENDDATE	Stores First Period Bill End Date when Service Lines are partially Billed from OM
+SERVICE_NUMBER	Unique number to identify the service lines.
+SERVICE_PERIOD	Period for which service is offered.
+SERVICE_REFERENCE_LINE_ID	Identifies the immediate parent line to which the service is attached.
+SERVICE_REFERENCE_SYSTEM_ID	To store system id for either reference type like order or customer product.
+SERVICE_REFERENCE_TYPE_CODE	To identify the service reference type. Typical values are Order and Customer Product
+SERVICE_START_DATE	Start date for the service
+SERVICE_SUBS_TEMPLATE_ID	Stores Subscription Template ID for Subscription Service Lines
+SERVICE_TXN_COMMENTS	Placeholder for service comments.
+SERVICE_TXN_REASON_CODE	To store service transaction reason.
+SHIP_FROM_ORG_ID	Ship from organization id -warehouse
+SHIP_MODEL_COMPLETE_FLAG	Indicates whether line is in ship-complete configuration
+SHIP_SET_ID	Ship Set Id; if the line belongs to a ship set
+SHIP_TO_CONTACT_ID	Person to which line is to be shipped
+SHIP_TO_ORG_ID	Ship to Organization Id
+SHIP_TOLERANCE_ABOVE	Over Shipment/Return Tolerance
+SHIP_TOLERANCE_BELOW	Under Shipment/Return Tolerance
+SHIPMENT_NUMBER	System generated identifer of a shipment within a line
+SHIPMENT_PRIORITY_CODE	Shipment Priority Code
+SHIPPABLE_FLAG	A flag to indicate whether a line is shippale or not.
+SHIPPED_QUANTITY	Shipped Quantity
+SHIPPED_QUANTITY2	Shipped quantity in ordered_quantity_uom2
+SHIPPING_INSTRUCTIONS	Shipping Instructions for Line
+SHIPPING_INTERFACED_FLAG	Shipping Interfaced Flag to indicate whether a line has been interfaced to shipping or not
+SHIPPING_METHOD_CODE	Shipping method
+SHIPPING_QUANTITY	Shipping Quantity
+SHIPPING_QUANTITY2	Shipping quantity in secondary shipping unit of measure
+SHIPPING_QUANTITY_UOM	Shipping Quantity UOM
+SHIPPING_QUANTITY_UOM2	Secondary unit of measure the item is shipped
+SOLD_FROM_ORG_ID	Selling organization
+SOLD_TO_ORG_ID	Customer to whom the item is sold to
+SORT_ORDER	Sorting sequence for a component within ordered bill
+SOURCE_DOCUMENT_ID	Source Order Header Id
+SOURCE_DOCUMENT_LINE_ID	Source Order Line Id
+SOURCE_DOCUMENT_TYPE_ID	Indicates the source of the order
+SOURCE_DOCUMENT_VERSION_NUMBER	Internal Use Only.
+SOURCE_TYPE_CODE	Sourcing indicator (internal or external)
+SPLIT_BY	Indicates whether the line is system or user level split
+SPLIT_FROM_LINE_ID	System generated identifier of original line which was split
+SUBINVENTORY	Subinventory
+SUBSCRIPTION_ENABLE_FLAG	Stores a value of either 'Y' or 'N' to indicate if the Line has to be treated as Subscription Service Line or a Standard Line
+TASK_ID	Task associated with this transaction
+TAX_CODE	Tax code for the line
+TAX_DATE	It will store the date for tax calculation
+TAX_EXEMPT_FLAG	It will decide the tax handling for the order line. Possible values can be S - Standard, E - Exempt, R - Required
+TAX_EXEMPT_NUMBER	The Tax exemption Number
+TAX_EXEMPT_REASON_CODE	The reason code for Tax exemption
+TAX_LINE_VALUE	The Tax amount in order currency, excluding the tax on Freight Charges if any
+TAX_POINT_CODE	For Future release
+TAX_RATE	The tax rate in percentage
+TAX_VALUE	The Tax amount in order currency, including the tax on Freight Charges if any
+TOP_MODEL_LINE_ID	System-generated identifier of configuration top parent line
+TP_ATTRIBUTE1	Descriptive Flexfield segment
+TP_ATTRIBUTE10	Descriptive Flexfield segment
+TP_ATTRIBUTE11	Descriptive Flexfield segment
+TP_ATTRIBUTE12	Descriptive Flexfield segment
+TP_ATTRIBUTE13	Descriptive Flexfield segment
+TP_ATTRIBUTE14	Descriptive Flexfield segment
+TP_ATTRIBUTE15	Descriptive Flexfield segment
+TP_ATTRIBUTE2	Descriptive Flexfield segment
+TP_ATTRIBUTE3	Descriptive Flexfield segment
+TP_ATTRIBUTE4	Descriptive Flexfield segment
+TP_ATTRIBUTE5	Descriptive Flexfield segment
+TP_ATTRIBUTE6	Descriptive Flexfield segment
+TP_ATTRIBUTE7	Descriptive Flexfield segment
+TP_ATTRIBUTE8	Descriptive Flexfield segment
+TP_ATTRIBUTE9	Descriptive Flexfield segment
+TP_CONTEXT	Descriptive Flexfield segment
+TRANSACTION_PHASE_CODE	Indicates if Transaction is in negotitation or fulfillment phase
+UNIT_COST	Unit Cost for the gross margin analysis
+UNIT_LIST_PERCENT	Price list percent of the item (percent-based pricing only)
+UNIT_LIST_PRICE	Price List price for the item
+UNIT_LIST_PRICE_PER_PQTY	Unit list price per pricing quantity.
+UNIT_PERCENT_BASE_PRICE	Based price used for percent based pricing
+UNIT_SELLING_PERCENT	Percent actually charged to customer (percent based pricing only)
+UNIT_SELLING_PRICE	Actual price chaged to customer
+UNIT_SELLING_PRICE_PER_PQTY	Unit selling price per pricing quantity.
+UPGRADED_FLAG	Denotes if this column is upgraded into R11i or is newly created in R11i version.
+USER_ITEM_DESCRIPTION	To store user entered item description.
+VEH_CUS_ITEM_CUM_KEY_ID	Customer Item cum key unique identifier. Updated at the time of shipment.
+VISIBLE_DEMAND_FLAG	Indicated line is visible to planning as demand
+
+
+# 
+# Below are the relation between the tables relation are provided  like table.column
+# oe_order_headers_all.header_id = oe_order_lines_all.header_id
+
+### A SQL query to find {{$input}}. Please provide only one SQL query and nothing else in a single string. Do not prompt anything else apart from the sql query.
+User: Can I get the last month created order'?
+Assistant: SELECT ooha.order_number FROM oe_order_headers_all ooha WHERE ooha.creation_date > (SYSDATE - 30)
+User: Can I get the booked date for order number'?
+Assistant: SELECT ooha.order_number, ooha.booked_date FROM oe_order_headers_all ooha Where ooha.order_number = ;
+User: Can I get the number of lines for order'?
+Assistant: SELECT count(1) FROM oe_order_headers_all ooha, oe_order_lines_all oola Where oola.header_id = ooha.header_id AND ooha.order_number = ;
+User: tell me the last shipped order
+Assistant: SELECT order_number FROM (SELECT ooha.order_number, oola.actual_shipment_date 
+FROM oe_order_headers_all ooha, oe_order_lines_all oola 
+WHERE ooha.header_id = oola.header_id 
+AND oola.shipped_quantity > 0 
+AND oola.actual_shipment_date IS NOT NULL
+ORDER BY oola.actual_shipment_date DESC) WHERE ROWNUM = 1;
+User: {{$input}}
+Assistant:
+
+
